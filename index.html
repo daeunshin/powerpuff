@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>powerpuff</title>
+	<style type="text/css">
+		body{
+			background: pink;
+			perspective: 700px;}
+
+		#falling { width: 100%; }
+		#tv{height: 600px; position: absolute; top: 30px; left: 200px;}
+		#heart{height: 450px; width:650px; position: absolute; top: 60px; left: 260px;}
+		#logo{
+			height: 300px; position: absolute; top: 140px; left: 350px;
+			animation:logoani 2s linear infinite;
+		}
+		#blossomlog{height: 130px; position: absolute; top: 40px; left: 1100px;}
+		#bubblelog{height: 130px; position: absolute; top: 180px; left: 1100px;}
+		#butterlog{height: 130px; position: absolute; top: 320px; left: 1100px;}
+		#blossomAni {
+			height: 0px; position: absolute; top: 50px; left: 300px;
+			animation:blo 1s forwards cubic-bezier(.06,.64,.6,1.03);
+			animation-play-state: paused;
+		}
+		#bubbleAni {
+			height: 0px; width:600px; position: absolute; top: 50px; left: 300px;
+			animation:bub 1s forwards cubic-bezier(.06,.64,.6,1.03);
+			animation-play-state: paused;
+		}
+		#butterAni {
+			height: 0px; position: absolute; top: 50px; left: 300px;
+			animation:but 1s forwards cubic-bezier(.06,.64,.6,1.03);
+			animation-play-state: paused;
+		}
+
+
+		@keyframes logoani{
+			from{}
+			to{transform: rotate3d(0.1,1,0.1,360deg);}
+		}
+		@keyframes blo {
+			from{height:0px;}
+			to{height: 480px;}
+		}
+		@keyframes bub {
+			from{height:0px;}
+			to{height: 460px;}
+		}
+		@keyframes but {
+			from{height:0px;}
+			to{height: 450px;}
+		}
+
+	</style>
+</head>
+<body>
+	<img src="falling.gif" id="falling">
+	<img src="heart.gif" id="heart">
+	<img src="logo.png" id="logo">
+	<img src="blossomAni.gif" id="blossomAni">
+	<img src="bubbleAni.gif" id="bubbleAni">
+	<img src="butterAni.gif" id="butterAni">
+	<img src="tv.png" id="tv">
+
+	<img src="blossom.png" id="blossomlog">
+	<img src="bubble.png" id="bubblelog">
+	<img src="butter.png" id="butterlog">
+
+	<script type="text/javascript">
+		var toggle = "off";
+		
+		blossomlog.onmouseover = function(){
+			blossomlog.style.cursor = "pointer";
+		}
+		blossomlog.onclick = function(){
+			if (toggle == "off") {
+				blossomAni.style.animationPlayState = "running";
+				blossomAni.style.opacity = "1";
+				bubbleAni.style.opacity = "0";
+				butterAni.style.opacity = "0";
+
+				toggle = "on";
+			}else if (toggle == "on") {
+				blossomAni.style.opacity = "0";
+				toggle = "off";
+			}
+		}
+
+		bubblelog.onmouseover = function(){
+			bubblelog.style.cursor = "pointer";
+		}
+		bubblelog.onclick = function(){
+			if (toggle == "off") {
+				bubbleAni.style.animationPlayState = "running";
+				bubbleAni.style.opacity = "1";
+				blossomAni.style.opacity = "0";
+				butterAni.style.opacity = "0";
+
+				toggle = "on";
+			}else if (toggle == "on") {
+				bubbleAni.style.opacity = "0";
+				toggle = "off";
+			}
+		}
+
+		butterlog.onmouseover = function(){
+			butterlog.style.cursor = "pointer";
+		}
+		butterlog.onclick = function(){
+			if (toggle == "off") {
+				butterAni.style.animationPlayState = "running";
+				butterAni.style.opacity = "1";
+				blossomAni.style.opacity = "0";
+				bubbleAni.style.opacity = "0";
+
+				toggle = "on";
+			}else if (toggle == "on") {
+				butterAni.style.opacity = "0";
+				toggle = "off";
+			}
+		}
+	</script>
+</body>
+</html>
